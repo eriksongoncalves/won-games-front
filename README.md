@@ -1,9 +1,4 @@
-# Instalação
-
-Clone o projeto usando:
-
-`yarn create next-app -e https://github.com/eriksongoncalves/boilerplate-nextJS-project`
-
+## Instalação
 
 Na raiz do projeto instale as dependências:
 
