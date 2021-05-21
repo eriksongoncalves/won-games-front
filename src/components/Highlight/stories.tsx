@@ -5,7 +5,12 @@ import item from './mock';
 export default {
   title: 'Highlight',
   component: Highlight,
-  args: { ...item }
+  args: { ...item },
+  parameters: {
+    backgrounds: {
+      default: 'won-dark'
+    }
+  }
 } as Meta;
 
 export const Default: Story<HighlightProps> = args => (

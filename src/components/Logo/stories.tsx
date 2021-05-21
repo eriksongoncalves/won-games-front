@@ -11,6 +11,11 @@ export default {
     size: {
       control: { type: 'select' }
     }
+  },
+  parameters: {
+    backgrounds: {
+      default: 'won-dark'
+    }
   }
 } as Meta;
 

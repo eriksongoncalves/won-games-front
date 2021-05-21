@@ -17,7 +17,9 @@ export default {
     buttonLink: '/games/defy-death'
   },
   parameters: {
-    layout: 'fullscreen'
+    backgrounds: {
+      default: 'won-dark'
+    }
   }
 } as Meta;
 
