@@ -84,7 +84,8 @@ exports[`<Menu /> should render the heading 1`] = `
   -ms-flex-pack: justify;
   justify-content: space-between;
   background: #FAFAFA;
-  position: absolute;
+  position: fixed;
+  z-index: 20;
   top: 0;
   bottom: 0;
   left: 0;

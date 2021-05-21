@@ -2,20 +2,38 @@ import 'match-media-mock';
 import { screen } from '@testing-library/react';
 import { renderWithTheme } from 'utils/tests/helpers';
 
+import bannerMock from 'components/BannerSlider/mock';
+import gamesMock from 'components/GameCardSlider/mock';
+import highlightMock from 'components/Highlight/mock';
+
 import Home from '.';
+
+const props = {
+  banners: bannerMock,
+  newGames: gamesMock,
+  mostPopularHighlight: highlightMock,
+  mostPopularGames: gamesMock,
+  upcommingGames: gamesMock,
+  upcommingHighligth: highlightMock,
+  upcommingMoreGames: gamesMock,
+  freeGames: gamesMock,
+  freeHighligth: highlightMock
+};
 
 describe('<Home />', () => {
   it('should render menu and footer', () => {
-    renderWithTheme(<Home />);
+    renderWithTheme(<Home {...props} />);
 
+    // menu
     expect(screen.getByLabelText(/open menu/i)).toBeInTheDocument();
-    expect(
-      screen.getByRole('heading', { name: /contact us/i })
-    ).toBeInTheDocument();
-  });
 
-  it('should render the sections', () => {
-    renderWithTheme(<Home />);
+    // footer
+    expect(
+      screen.getByRole('heading', { name: /follow us/i })
+    ).toBeInTheDocument();
+
+    // logos (menu/footer)
+    expect(screen.getAllByRole('img', { name: /won games/i })).toHaveLength(2);
 
     expect(screen.getByRole('heading', { name: /news/i })).toBeInTheDocument();
     expect(
@@ -27,5 +45,12 @@ describe('<Home />', () => {
     expect(
       screen.getByRole('heading', { name: /free games/i })
     ).toBeInTheDocument();
+
+    // banner
+    expect(screen.getAllByText(/defy death 1/i)).toHaveLength(1);
+    // card game
+    expect(screen.getAllByText(/population zero/i)).toHaveLength(20);
+    // highlight
+    expect(screen.getAllByText(/read dead is back!/i)).toHaveLength(3);
   });
 });
