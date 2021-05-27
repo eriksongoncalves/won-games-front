@@ -23,7 +23,7 @@
   "lint-staged": {
     "src/**/*": [
       "yarn lint --fix",
-      "yarn jest --silent --runInBand"
+      "yarn jest --silent"
     ]
   },
   "dependencies": {
