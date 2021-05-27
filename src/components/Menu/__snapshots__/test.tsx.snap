@@ -486,13 +486,14 @@ exports[`<Menu /> should render the heading 1`] = `
     <div
       class="c6"
     >
-      <button
+      <a
         class="c12"
+        href="/sign-in"
       >
         <span>
           Sign in
         </span>
-      </button>
+      </a>
     </div>
   </div>
   <nav
@@ -535,19 +536,20 @@ exports[`<Menu /> should render the heading 1`] = `
     <div
       class="c14 c15"
     >
-      <button
+      <a
         class="c16"
+        href="/sign-in"
       >
         <span>
-          Log in now
+          Sign in
         </span>
-      </button>
+      </a>
       <span>
         or
       </span>
       <a
         class="c17"
-        href="#"
+        href="/sign-up"
         title="Sign Up"
       >
         Sign Up
