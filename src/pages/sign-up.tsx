@@ -1,7 +1,13 @@
 import Auth from 'templates/Auth';
 
-function SignUp() {
-  return <Auth title="Sign Up">children</Auth>;
+import { FormSignUp } from 'components';
+
+function SignIn() {
+  return (
+    <Auth title="Sign Up">
+      <FormSignUp />
+    </Auth>
+  );
 }
 
-export default SignUp;
+export default SignIn;
