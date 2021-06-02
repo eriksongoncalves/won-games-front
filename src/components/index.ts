@@ -16,6 +16,7 @@ export { default as MediaMatch } from './MediaMatch';
 export { default as Menu } from './Menu';
 export { default as Radio } from './Radio';
 export { default as Ribbon } from './Ribbon';
+export { default as Showcase } from './Showcase';
 export { default as Slider } from './Slider';
 export { default as TextField } from './TextField';
 export { default as WishlistButton } from './WishlistButton';

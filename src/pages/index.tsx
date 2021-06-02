@@ -16,10 +16,10 @@ export function getServerSideProps() {
       mostPopularHighlight: highlightMock,
       mostPopularGames: gameMock,
       upcommingGames: gameMock,
-      upcommingHighligth: highlightMock,
+      upcommingHighlight: highlightMock,
       upcommingMoreGames: gameMock,
       freeGames: gameMock,
-      freeHighligth: highlightMock
+      freeHighlight: highlightMock
     }
   };
 }
