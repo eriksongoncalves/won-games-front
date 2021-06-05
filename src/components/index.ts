@@ -7,6 +7,7 @@ export { Container } from './Container';
 export { default as Footer } from './Footer';
 export { default as FormSignIn } from './FormSignIn';
 export { default as FormSignUp } from './FormSignUp';
+export { default as Gallery } from './Gallery';
 export { default as GameCard } from './GameCard';
 export { default as GameCardSlider } from './GameCardSlider';
 export { default as GameDetails } from './GameDetails';
