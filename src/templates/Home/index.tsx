@@ -1,5 +1,6 @@
 import * as S from './styles';
-import { Container, Menu, Footer, BannerSlider, Showcase } from 'components';
+import Base from 'templates/Base';
+import { Container, BannerSlider, Showcase } from 'components';
 import { BannerProps } from 'components/Banner';
 import { GameCardProps } from 'components/GameCard';
 import { HighlightProps } from 'components/Highlight';
@@ -27,10 +28,8 @@ const Home = ({
   freeGames,
   freeHighlight
 }: HomeTemplateProps) => (
-  <section>
+  <Base>
     <Container>
-      <Menu />
-
       <S.SectionBanner>
         <BannerSlider items={banners} />
       </S.SectionBanner>
@@ -54,13 +53,7 @@ const Home = ({
     </S.SectionUpcoming>
 
     <Showcase title="Free games" highlight={freeHighlight} games={freeGames} />
-
-    <S.SectionFooter>
-      <Container>
-        <Footer />
-      </Container>
-    </S.SectionFooter>
-  </section>
+  </Base>
 );
 
 export default Home;
