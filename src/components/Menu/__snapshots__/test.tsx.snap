@@ -18,6 +18,7 @@ exports[`<Menu /> should render the heading 1`] = `
   align-items: center;
   padding: 2.4rem 0;
   position: relative;
+  z-index: 20;
 }
 
 .c2 {
