@@ -1,4 +1,4 @@
-# <p align="center"><img height="100" src="https://github.com/eriksongoncalves/won-games-front/blob/master/public/img/icon-512.png?raw=true" alt="Won games" title="Won games"/></p>
+<p align="center"><img height="100" src="https://github.com/eriksongoncalves/won-games-front/blob/master/public/img/icon-512.png?raw=true" alt="Won games" title="Won games"/></p>
 
 
 ## Figma
