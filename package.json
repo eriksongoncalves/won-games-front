@@ -22,8 +22,7 @@
   },
   "lint-staged": {
     "src/**/*": [
-      "yarn lint --fix",
-      "yarn jest --silent"
+      "yarn lint --fix"
     ]
   },
   "dependencies": {
