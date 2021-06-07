@@ -101,6 +101,10 @@ exports[`<CartList /> should render the cart list 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -216,7 +220,9 @@ exports[`<CartList /> should render the cart list 1`] = `
   <div
     class="c8"
   >
-    Total 
+    <span>
+      Total:
+    </span>
     <span
       class="c9"
     >
