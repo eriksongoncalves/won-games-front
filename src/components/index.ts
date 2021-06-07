@@ -37,4 +37,5 @@ export { default as Showcase } from './Showcase';
 export { default as Slider } from './Slider';
 export { default as TextContent } from './TextContent';
 export { default as TextField } from './TextField';
+export { default as UserDropdown } from './UserDropdown';
 export { default as WishlistButton } from './WishlistButton';

@@ -1,17 +1,24 @@
+import 'match-media-mock';
 import { fireEvent, screen } from '@testing-library/react';
 import { renderWithTheme } from 'utils/tests/helpers';
 
 import Menu from '.';
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const useRouter = jest.spyOn(require('next/router'), 'useRouter');
+
+useRouter.mockImplementation(() => ({
+  query: {}
+}));
+
 describe('<Menu />', () => {
-  it('should render the heading', () => {
-    const { container } = renderWithTheme(<Menu />);
+  it('should render the menu', () => {
+    renderWithTheme(<Menu />);
 
     expect(screen.getByLabelText(/open menu/i)).toBeInTheDocument();
+    expect(screen.getByRole('img', { name: /won games/i })).toBeInTheDocument();
     expect(screen.getByLabelText(/search/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/open shopping cart/i)).toBeInTheDocument();
-
-    expect(container.firstChild).toMatchSnapshot();
+    expect(screen.getAllByLabelText(/shopping cart/i)).toHaveLength(2);
   });
 
   it('should handle the open/close mobile menu', () => {
@@ -38,18 +45,25 @@ describe('<Menu />', () => {
   it('should show register box when logged out', () => {
     renderWithTheme(<Menu />);
 
-    expect(screen.queryByText(/my account/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/my profile/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/wishlist/i)).not.toBeInTheDocument();
     expect(screen.getByText(/sign up/i)).toBeInTheDocument();
     expect(screen.getAllByText(/sign in/i)).toHaveLength(2);
   });
 
-  it('should show wishlight and account when logged in', () => {
+  it('should show wishlist and account when logged in', () => {
     renderWithTheme(<Menu username="will" />);
 
-    expect(screen.getByText(/my account/i)).toBeInTheDocument();
-    expect(screen.getByText(/wishlist/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/my profile/i)).toHaveLength(2);
+    expect(screen.getAllByText(/wishlist/i)).toHaveLength(2);
+    expect(screen.queryByText(/sign in/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/sign up/i)).not.toBeInTheDocument();
+  });
+
+  it('should not show sign in or dropdownUser if loading', () => {
+    renderWithTheme(<Menu username="will" loading />);
+
+    expect(screen.queryByText(/my profile/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/sign in/i)).not.toBeInTheDocument();
   });
 });
