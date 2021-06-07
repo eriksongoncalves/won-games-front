@@ -2,6 +2,7 @@ export { default as Banner } from './Banner';
 export { default as BannerSlider } from './BannerSlider';
 export { default as Button } from './Button';
 export { default as CardButtont } from './CardButton';
+export { default as CardsList } from './CardsList';
 export { default as CartList } from './CartList';
 export { default as Checkbox } from './Checkbox';
 export { Container } from './Container';
