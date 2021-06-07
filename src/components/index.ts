@@ -9,6 +9,7 @@ export { Container } from './Container';
 export { Divider } from './Divider';
 export { default as Footer } from './Footer';
 export { default as Empty } from './Empty';
+export { default as ExploreSidebar } from './ExploreSidebar';
 export { default as FormProfile } from './FormProfile';
 export { default as FormSignIn } from './FormSignIn';
 export { default as FormSignUp } from './FormSignUp';
