@@ -24,6 +24,7 @@ export { default as Highlight } from './Highlight';
 export { default as Logo } from './Logo';
 export { default as MediaMatch } from './MediaMatch';
 export { default as Menu } from './Menu';
+export { default as OrdersList } from './OrdersList';
 export { default as PaymentOptions } from './PaymentOptions';
 export { default as ProfileMenu } from './ProfileMenu';
 export { default as Radio } from './Radio';
