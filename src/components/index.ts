@@ -5,6 +5,7 @@ export { default as CardButtont } from './CardButton';
 export { default as CardsList } from './CardsList';
 export { default as CartIcon } from './CartIcon';
 export { default as CartList } from './CartList';
+export { default as CartDropdown } from './CartDropdown';
 export { default as Checkbox } from './Checkbox';
 export { Container } from './Container';
 export { Divider } from './Divider';
