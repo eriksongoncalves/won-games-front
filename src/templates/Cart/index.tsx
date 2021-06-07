@@ -1,11 +1,8 @@
-import { Container } from 'components/Container';
-import { Divider } from 'components/Divider';
+import { Container, Divider, Heading, Showcase } from 'components';
 import { GameCardProps } from 'components/GameCard';
 import { HighlightProps } from 'components/Highlight';
 import PaymentOptions, { PaymentOptionsProps } from 'components/PaymentOptions';
 import CartList, { CartListProps } from 'components/CartList';
-import Heading from 'components/Heading';
-import Showcase from 'components/Showcase';
 import Base from 'templates/Base';
 
 import * as S from './styles';
@@ -20,7 +17,7 @@ export type CartProps = {
 const Cart = ({
   recommendedGames,
   recommendedHighlight,
-  items,
+  items = [],
   total,
   cards
 }: CartProps) => {
