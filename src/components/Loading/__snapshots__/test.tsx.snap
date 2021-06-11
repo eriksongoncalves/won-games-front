@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Loading /> should render correctly 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 55px;
+  margin: auto;
+  color: #F231A5;
+}
+
+.c1 {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: currentColor;
+  display: inline-block;
+}
+
+.c1:nth-child(1) {
+  -webkit-animation: jeKoQt 1s 0s infinite ease-in-out;
+  animation: jeKoQt 1s 0s infinite ease-in-out;
+}
+
+.c1:nth-child(2) {
+  -webkit-animation: jeKoQt 1s 200ms infinite ease-in-out;
+  animation: jeKoQt 1s 200ms infinite ease-in-out;
+}
+
+.c1:nth-child(3) {
+  -webkit-animation: jeKoQt 1s 400ms infinite ease-in-out;
+  animation: jeKoQt 1s 400ms infinite ease-in-out;
+}
+
+<div
+  aria-label="loading..."
+  class="c0"
+>
+  <div
+    class="c1"
+  />
+  <div
+    class="c1"
+  />
+  <div
+    class="c1"
+  />
+</div>
+`;
