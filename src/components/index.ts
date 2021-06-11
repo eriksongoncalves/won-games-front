@@ -25,6 +25,7 @@ export { default as GameItem } from './GameItem';
 export { Grid } from './Grid';
 export { default as Heading } from './Heading';
 export { default as Highlight } from './Highlight';
+export { default as Loading } from './Loading';
 export { default as Logo } from './Logo';
 export { default as MediaMatch } from './MediaMatch';
 export { default as Menu } from './Menu';
