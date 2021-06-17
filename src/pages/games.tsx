@@ -85,8 +85,8 @@ export async function getServerSideProps({ query }: GetServerSidePropsContext) {
   });
 
   return {
+    revalidate: 60,
     props: {
-      revalidate: 60,
       initialApolloState: apolloClient.cache.extract(),
       filterItems
     }
