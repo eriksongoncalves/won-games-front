@@ -10,6 +10,7 @@ export const IconWrapper = styled.div`
   cursor: pointer;
   width: 2.4rem;
   height: 2.4rem;
+
   ${media.greaterThan('medium')`
     display: none;
   `}
@@ -23,6 +24,7 @@ export const Content = styled.div`
     margin-top: 5.6rem;
     margin-bottom: 2rem;
     transition: transform ${theme.transition.default};
+
     ${media.greaterThan('medium')`
       overflow-y: initial;
       padding: 0;
@@ -45,6 +47,7 @@ export const Items = styled.div`
     & > div:not(:last-of-type) {
       margin-bottom: ${theme.spacings.xsmall};
     }
+
     & + div {
       border-top: 0.1rem solid ${rgba(theme.colors.gray, 0.2)};
       margin-top: ${theme.spacings.small};
@@ -57,6 +60,10 @@ export const Footer = styled.div`
   ${({ theme }) => css`
     box-shadow: 0 -0.2rem 0.4rem ${rgba(theme.colors.black, 0.2)};
     padding: ${theme.spacings.small};
+
+    ${media.greaterThan('medium')`
+      display: none;
+    `}
   `}
 `;
 
@@ -70,6 +77,7 @@ const wrapperModifiers = {
     flex-direction: column;
     top: 0;
     left: 0;
+
     ${Overlay} {
       z-index: ${theme.layers.modal};
       background-color: #fff;
@@ -80,23 +88,28 @@ const wrapperModifiers = {
       height: 100vh;
       opacity: 1;
     }
+
     ${Content} {
       margin-top: ${theme.spacings.medium};
       transform: translateY(0);
       overflow-y: scroll;
     }
+
     ${Content}, ${Footer}, ${IconWrapper} {
       z-index: ${theme.layers.modal};
     }
+
     ${HeadingStyles.Wrapper} {
       color: ${theme.colors.black};
       font-size: ${theme.font.sizes.xlarge};
       font-weight: ${theme.font.normal};
     }
+
     ${RadioStyles.Label},
     ${CheckboxStyles.Label} {
       color: ${theme.colors.black};
     }
+
     ${IconWrapper} {
       color: ${theme.colors.black};
       > svg {
@@ -118,10 +131,12 @@ const wrapperModifiers = {
         display: none;
       }
     }
+
     ${Content} {
       transform: translateY(3rem);
       height: 0;
     }
+
     ${Content}, ${Footer} {
       visibility: hidden;
       position: absolute;
