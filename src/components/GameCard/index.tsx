@@ -1,12 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import Ribbon, { RibbonColors, RibbonSizes } from 'components/Ribbon';
-import CartButton from 'components/CardButton';
-import WishlistButton from 'components/WishlistButton';
-
 import * as S from './styles';
 import formatPrice from 'utils/format-price';
+import Ribbon, { RibbonColors, RibbonSizes } from 'components/Ribbon';
+import { CartButton, WishlistButton } from 'components';
 
 export type GameCardProps = {
   id: string;
@@ -22,6 +20,7 @@ export type GameCardProps = {
 };
 
 const GameCard = ({
+  id,
   slug,
   title,
   developer,
@@ -58,7 +57,7 @@ const GameCard = ({
           <S.Price isPromotional>{formatPrice(price)}</S.Price>
         )}
         <S.Price>{formatPrice(promotionalPrice || price)}</S.Price>
-        <CartButton />
+        <CartButton id={id} />
       </S.BuyBox>
     </S.Content>
   </S.Wrapper>
