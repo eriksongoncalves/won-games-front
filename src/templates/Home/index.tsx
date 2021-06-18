@@ -7,31 +7,31 @@ import { HighlightProps } from 'components/Highlight';
 
 export type HomeTemplateProps = {
   banners: BannerProps[];
-  newGames: GameCardProps[];
   newGamesTitle: string;
-  mostPopularHighlight: HighlightProps;
+  newGames: GameCardProps[];
   mostPopularGamesTitle: string;
+  mostPopularHighlight: HighlightProps;
   mostPopularGames: GameCardProps[];
   upcommingGamesTitle: string;
   upcommingGames: GameCardProps[];
   upcommingHighlight: HighlightProps;
-  freeGames: GameCardProps[];
   freeGamesTitle: string;
+  freeGames: GameCardProps[];
   freeHighlight: HighlightProps;
 };
 
 const Home = ({
   banners,
-  newGames,
   newGamesTitle,
-  mostPopularHighlight,
+  newGames,
   mostPopularGamesTitle,
+  mostPopularHighlight,
   mostPopularGames,
-  upcommingGames,
   upcommingGamesTitle,
+  upcommingGames,
   upcommingHighlight,
-  freeGames,
   freeGamesTitle,
+  freeGames,
   freeHighlight
 }: HomeTemplateProps) => (
   <Base>

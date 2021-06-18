@@ -1,5 +1,4 @@
-import { screen } from '@testing-library/react';
-import { renderWithTheme } from 'utils/tests/helpers';
+import { render, screen } from 'utils/test-utils';
 
 import MediaMatch from '.';
 
@@ -9,7 +8,7 @@ describe('<MediaMatch />', () => {
 
   // hook tests
   beforeEach(() => {
-    renderWithTheme(
+    render(
       <>
         <MediaMatch greaterThan="medium">
           <h1 data-testid="desktop">Desktop</h1>

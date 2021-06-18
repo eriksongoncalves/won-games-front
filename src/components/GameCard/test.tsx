@@ -1,5 +1,4 @@
-import { screen } from '@testing-library/react';
-import { renderWithTheme } from 'utils/tests/helpers';
+import { render, screen } from 'utils/test-utils';
 
 import GameCard from '.';
 
@@ -14,7 +13,7 @@ const props = {
 
 describe('<GameCard />', () => {
   it('should render correctly', () => {
-    const { container } = renderWithTheme(<GameCard {...props} />);
+    const { container } = render(<GameCard {...props} />);
 
     expect(
       screen.getByRole('heading', { name: props.title })
@@ -40,7 +39,7 @@ describe('<GameCard />', () => {
   });
 
   it('should render price in label', () => {
-    renderWithTheme(<GameCard {...props} />);
+    render(<GameCard {...props} />);
 
     const price = screen.getByText('$235.00');
 
@@ -49,7 +48,7 @@ describe('<GameCard />', () => {
   });
 
   it('should render a line-through in price when promotional', () => {
-    renderWithTheme(<GameCard {...props} promotionalPrice={15} />);
+    render(<GameCard {...props} promotionalPrice={15} />);
 
     expect(screen.getByText('$235.00')).toHaveStyle({
       textDecoration: 'line-through'
@@ -61,7 +60,7 @@ describe('<GameCard />', () => {
   });
 
   it('should render Ribbon', () => {
-    renderWithTheme(
+    render(
       <GameCard
         {...props}
         ribbon="My Ribbon"

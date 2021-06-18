@@ -1,6 +1,6 @@
 import 'match-media-mock';
-import { fireEvent, screen } from '@testing-library/react';
-import { renderWithTheme } from 'utils/tests/helpers';
+
+import { render, screen, fireEvent } from 'utils/test-utils';
 
 import Menu from '.';
 
@@ -13,7 +13,7 @@ useRouter.mockImplementation(() => ({
 
 describe('<Menu />', () => {
   it('should render the menu', () => {
-    renderWithTheme(<Menu />);
+    render(<Menu />);
 
     expect(screen.getByLabelText(/open menu/i)).toBeInTheDocument();
     expect(screen.getByRole('img', { name: /won games/i })).toBeInTheDocument();
@@ -22,7 +22,7 @@ describe('<Menu />', () => {
   });
 
   it('should handle the open/close mobile menu', () => {
-    renderWithTheme(<Menu />);
+    render(<Menu />);
 
     // selecionar o nosso MenuFull
     const fullMenuElement = screen.getByRole('navigation', { hidden: true });
@@ -43,7 +43,7 @@ describe('<Menu />', () => {
   });
 
   it('should show register box when logged out', () => {
-    renderWithTheme(<Menu />);
+    render(<Menu />);
 
     expect(screen.queryByText(/my profile/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/wishlist/i)).not.toBeInTheDocument();
@@ -52,7 +52,7 @@ describe('<Menu />', () => {
   });
 
   it('should show wishlist and account when logged in', () => {
-    renderWithTheme(<Menu username="will" />);
+    render(<Menu username="will" />);
 
     expect(screen.getAllByText(/my profile/i)).toHaveLength(2);
     expect(screen.getAllByText(/wishlist/i)).toHaveLength(2);
@@ -61,7 +61,7 @@ describe('<Menu />', () => {
   });
 
   it('should not show sign in or dropdownUser if loading', () => {
-    renderWithTheme(<Menu username="will" loading />);
+    render(<Menu username="will" loading />);
 
     expect(screen.queryByText(/my profile/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/sign in/i)).not.toBeInTheDocument();

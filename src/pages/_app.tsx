@@ -6,6 +6,7 @@ import { ThemeProvider } from 'styled-components';
 import GlobalStyles from 'styles/global';
 import theme from 'styles/theme';
 import { useApollo } from 'utils/apollo';
+import { CartProvider } from 'hooks/use-cart';
 
 function App({ Component, pageProps }: AppProps) {
   const client = useApollo(pageProps.initialApoloState);
@@ -24,7 +25,9 @@ function App({ Component, pageProps }: AppProps) {
           />
         </Head>
         <GlobalStyles />
-        <Component {...pageProps} />
+        <CartProvider>
+          <Component {...pageProps} />
+        </CartProvider>
       </ApolloProvider>
     </ThemeProvider>
   );

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Highlight /> should renderWithTheme headings and button 1`] = `
+exports[`<Highlight /> should render headings and button 1`] = `
 .c5 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;

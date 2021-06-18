@@ -1,6 +1,5 @@
-import { screen } from '@testing-library/react';
-import { renderWithTheme } from 'utils/tests/helpers';
 import userEvent from '@testing-library/user-event';
+import { render, screen } from 'utils/test-utils';
 
 import UserDropdown from '.';
 
@@ -13,13 +12,13 @@ useRouter.mockImplementation(() => ({
 
 describe('<UserDropdown />', () => {
   it('should render the username', () => {
-    renderWithTheme(<UserDropdown username="Willian" />);
+    render(<UserDropdown username="Willian" />);
 
     expect(screen.getByText(/willian/i)).toBeInTheDocument();
   });
 
   it('should render the menu', () => {
-    renderWithTheme(<UserDropdown username="Willian" />);
+    render(<UserDropdown username="Willian" />);
 
     // open menu
     userEvent.click(screen.getByText(/willian/i));
