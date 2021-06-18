@@ -1,7 +1,6 @@
 export { default as Banner } from './Banner';
 export { default as BannerSlider } from './BannerSlider';
 export { default as Button } from './Button';
-export { default as CardButtont } from './CardButton';
 export { default as CardsList } from './CardsList';
 export { default as CartButton } from './CartButton';
 export { default as CartDropdown } from './CartDropdown';
