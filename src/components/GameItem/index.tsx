@@ -1,6 +1,7 @@
 import { Download } from '@styled-icons/boxicons-solid/Download';
 
 import * as S from './styles';
+import { useCart } from 'hooks/use-cart';
 
 export type PaymentInfoProps = {
   number: string;
@@ -10,6 +11,7 @@ export type PaymentInfoProps = {
 };
 
 export type GameItemProps = {
+  id: string;
   img: string;
   title: string;
   price: string;
@@ -18,12 +20,15 @@ export type GameItemProps = {
 };
 
 const GameItem = ({
+  id,
   img,
   title,
   price,
   downloadLink,
   paymentInfo
 }: GameItemProps) => {
+  const { isInCart, removeFromCart } = useCart();
+
   return (
     <S.Wrapper>
       <S.GameContent>
@@ -46,6 +51,9 @@ const GameItem = ({
           </S.Title>
           <S.Group>
             <S.Price>{price}</S.Price>
+            {isInCart(id) && (
+              <S.Remove onClick={() => removeFromCart(id)}>Remove</S.Remove>
+            )}
           </S.Group>
         </S.Content>
       </S.GameContent>
@@ -55,9 +63,7 @@ const GameItem = ({
           <p>{paymentInfo.purchaseDate}</p>
           <S.CardInfo>
             <span>{paymentInfo.number}</span>
-            {!!paymentInfo.img && !!paymentInfo.flag && (
-              <img src={paymentInfo.img} alt={paymentInfo.flag} />
-            )}
+            <img src={paymentInfo.img!} alt={paymentInfo.flag!} />
           </S.CardInfo>
         </S.PaymentContent>
       )}
