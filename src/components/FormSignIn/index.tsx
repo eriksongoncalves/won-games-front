@@ -1,16 +1,18 @@
 import { useState } from 'react';
 import { signIn } from 'next-auth/client';
 import Link from 'next/link';
-import { Email, Lock } from '@styled-icons/material-outlined';
+import { Email, Lock, ErrorOutline } from '@styled-icons/material-outlined';
 import { useRouter } from 'next/router';
 
-import { FormLink, FormWrapper, FormLoading } from 'components/Form';
-import { Button, TextField } from 'components';
-
 import * as S from './styles';
+import { FormLink, FormWrapper, FormLoading, FormError } from 'components/Form';
+import { Button, TextField } from 'components';
+import { FieldErrors, signInValidate } from 'utils/validations';
 
 const FormSignIn = () => {
-  const [values, setValues] = useState({});
+  const [formError, setFormError] = useState('');
+  const [fieldError, setFieldError] = useState<FieldErrors>({});
+  const [values, setValues] = useState({ email: '', password: '' });
   const [loading, setLoading] = useState(false);
   const { push } = useRouter();
 
@@ -21,6 +23,16 @@ const FormSignIn = () => {
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     setLoading(true);
+
+    const errors = signInValidate(values);
+
+    if (Object.keys(errors).length) {
+      setFieldError(errors);
+      setLoading(false);
+      return;
+    }
+
+    setFieldError({});
 
     // sign in
     const result = await signIn('credentials', {
@@ -35,12 +47,17 @@ const FormSignIn = () => {
 
     setLoading(false);
 
-    // jogar o erro
-    console.error('email ou senha inválida');
+    setFormError('username or password is invalid');
   };
 
   return (
     <FormWrapper>
+      {!!formError && (
+        <FormError>
+          <ErrorOutline /> {formError}
+        </FormError>
+      )}
+
       <form onSubmit={handleSubmit}>
         <TextField
           name="email"
@@ -48,6 +65,7 @@ const FormSignIn = () => {
           type="email"
           onInputChange={v => handleInput('email', v)}
           icon={<Email />}
+          error={fieldError?.email}
         />
         <TextField
           name="password"
@@ -55,7 +73,9 @@ const FormSignIn = () => {
           type="password"
           onInputChange={v => handleInput('password', v)}
           icon={<Lock />}
+          error={fieldError?.password}
         />
+
         <S.ForgotPassword href="#">Forgot your password?</S.ForgotPassword>
 
         <Button type="submit" size="large" fullWidth disabled={loading}>
