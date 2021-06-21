@@ -1,3 +1,4 @@
+import React from 'react';
 import { render, screen } from 'utils/test-utils';
 import galleryMock from 'components/Gallery/mock';
 import gameInfoMock from 'components/GameInfo/mock';
@@ -53,6 +54,13 @@ jest.mock('components/Showcase', () => ({
   __esModule: true,
   default: function Mock() {
     return <div data-testid="Mock Showcase" />;
+  }
+}));
+
+jest.mock('templates/Base', () => ({
+  __esModule: true,
+  default: function Mock({ children }: { children: React.ReactNode }) {
+    return <div data-testid="Mock Base">{children}</div>;
   }
 }));
 

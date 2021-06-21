@@ -3,6 +3,14 @@ import 'match-media-mock';
 import { render, screen } from 'utils/test-utils';
 import FormSignIn from '.';
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const useRouter = jest.spyOn(require('next/router'), 'useRouter');
+const push = jest.fn();
+
+useRouter.mockImplementation(() => ({
+  push
+}));
+
 describe('<FormSignIn />', () => {
   it('should render the form', () => {
     const { container } = render(<FormSignIn />);
