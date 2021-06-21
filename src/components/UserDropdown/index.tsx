@@ -1,5 +1,6 @@
 import Link from 'next/link';
-// import { useRouter } from 'next/router';
+import { signOut } from 'next-auth/client';
+
 import {
   AccountCircle,
   FavoriteBorder,
@@ -16,8 +17,6 @@ export type UserDropdownProps = {
 };
 
 const UserDropdown = ({ username }: UserDropdownProps) => {
-  // const { push } = useRouter();
-
   return (
     <Dropdown
       title={
@@ -42,11 +41,7 @@ const UserDropdown = ({ username }: UserDropdownProps) => {
           </S.Link>
         </Link>
 
-        <S.Link
-          role="button"
-          title="Sign out"
-          onClick={() => console.log('Sign out')}
-        >
+        <S.Link role="button" title="Sign out" onClick={() => signOut()}>
           <ExitToApp />
           <span>Sign out</span>
         </S.Link>
