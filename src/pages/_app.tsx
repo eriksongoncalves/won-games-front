@@ -9,6 +9,7 @@ import GlobalStyles from 'styles/global';
 import theme from 'styles/theme';
 import { useApollo } from 'utils/apollo';
 import { CartProvider } from 'hooks/use-cart';
+import { WishlistProvider } from 'hooks/use-wishlist';
 
 function App({ Component, pageProps }: AppProps) {
   const client = useApollo(pageProps.initialApoloState);
@@ -35,7 +36,9 @@ function App({ Component, pageProps }: AppProps) {
             height={5}
           />
           <CartProvider>
-            <Component {...pageProps} />
+            <WishlistProvider>
+              <Component {...pageProps} />
+            </WishlistProvider>
           </CartProvider>
         </ApolloProvider>
       </AuthProvider>
