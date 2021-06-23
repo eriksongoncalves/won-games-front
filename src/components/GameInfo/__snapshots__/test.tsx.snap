@@ -160,6 +160,12 @@ exports[`<GameInfo /> should render game informations 1`] = `
   color: #e20e8d;
 }
 
+.c7 {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
 .c1 {
   color: #030517;
   font-size: 2.0rem;
@@ -175,12 +181,6 @@ exports[`<GameInfo /> should render game informations 1`] = `
   content: '';
   width: 5rem;
   border-bottom: 0.5rem solid #F231A5;
-}
-
-.c7 {
-  display: inline-block;
-  vertical-align: middle;
-  overflow: hidden;
 }
 
 .c0 {
