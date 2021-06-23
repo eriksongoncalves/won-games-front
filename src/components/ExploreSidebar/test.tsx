@@ -1,4 +1,3 @@
-import 'match-media-mock';
 import userEvent from '@testing-library/user-event';
 import { css } from 'styled-components';
 

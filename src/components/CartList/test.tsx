@@ -1,4 +1,3 @@
-import 'match-media-mock';
 import { CartContextDefaultValues } from 'hooks/use-cart';
 import { render, screen } from 'utils/test-utils';
 

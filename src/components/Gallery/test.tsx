@@ -1,4 +1,3 @@
-import 'match-media-mock';
 import { render, screen, fireEvent } from 'utils/test-utils';
 
 import Gallery from '.';
